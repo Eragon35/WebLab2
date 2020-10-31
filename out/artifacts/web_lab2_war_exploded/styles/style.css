@@ -1,0 +1,143 @@
+/* Наследование и каскадирование стилей */
+body{
+    background-image: url(../pictures/back.png);
+    background-size: 20%; 
+}
+
+#labInfo > header{  /* использование селекторов дочерних элементов */
+    font-family: "Montserrat","Open Sans", sans-serif;
+    color:#fff;
+    font-size: 23px;
+    background-color: rgba(0, 34, 255, 0.8);
+    border: 4px solid crimson;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 420px; 
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#headline{
+    transition: transform .35s; /* Animation */
+}
+
+#image{
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width:20%; */
+    border: 6px solid crimson;
+    cursor: crosshair;
+}
+.left{
+    width: 20%;
+    float: left;
+    opacity: 0;
+    border:4px solid #02f;
+}
+.left:hover{
+    opacity: 0.4;
+}
+.right{
+    width: 20%;
+    float: right;
+    opacity: 0;
+    border:4px solid #02f;
+}
+.right:hover{
+    opacity: 0.4;
+}
+#fear{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 0%;
+    transition: transform .35s; /* Animation */
+}
+
+form[name = "myform"]{   /* использование селекторов элементов */
+    font-family: "Montserrat","Open Sans", sans-serif;
+    font-size: 16pt;
+    line-height: 1px;
+    padding-left: 15px; 
+    margin-top: 10px;   /* задал отступы элементов ввода в пикселях */
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    width: 34%; 
+    text-align: center;
+    border: 4px solid crimson;
+    background-color: rgba(0, 34, 255, 0.8);
+}
+form[name = "myform"]:hover {
+    width: 50%;
+    background-image: url(../pictures/pride.png);
+    background-size: 63%;
+    opacity: 0.95;
+}
+
+#Button{
+    font-size: 100%; 
+    padding:5px 10px 5px 10px; 
+    margin: 10px; 
+    background-color: white; 
+    color: blue;
+    border-left: 4px solid rgb(130,130,130);
+    border-top: 4px solid rgb(130,130,130);
+    border-bottom: 4px solid rgb(0, 0, 0);
+    border-right: 4px solid rgb(0, 0, 0);
+}
+#Button:hover { /* использование селекторов псевдоклассов */      
+    cursor: pointer; /* курсор — палец */
+    box-shadow: 4px 4px crimson; 
+}
+#Button:disabled{ 
+    background-color: rgb(50,50,50);
+    color: gray;
+}
+#return{
+    font-size: 125%; 
+    padding:5px 10px 5px 10px;
+    background-color: white;
+    color: blue;
+    border-left: 4px solid rgb(130,130,130);
+    border-top: 4px solid rgb(130,130,130);
+    border-bottom: 4px solid rgb(0, 0, 0);
+    border-right: 4px solid rgb(0, 0, 0);
+    display: block;
+    margin: 10px auto;
+}
+#return:hover {     
+    cursor: pointer; 
+    box-shadow: 4px 4px crimson; 
+    transition: transform .35s;
+}
+
+#table{
+    margin-top: 20px;
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16pt;
+    color: crimson;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-left: 1%;
+    padding-right: 1%;
+    border:2px solid #02f;
+    border-collapse: collapse;
+}
+#table:hover {
+    background-image: url("../pictures/pattern.jpg");
+    opacity: 0.8;
+}
+
+table td{   /* использование селектора потомков */
+    border:2px solid #02f;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+td:hover{
+    filter:sepia(100%);
+}
