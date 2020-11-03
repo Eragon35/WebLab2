@@ -1,11 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Triada
-  Date: 01.10.2020
-  Time: 2:39
-  To change this template use File | Settings | File Templates.
---%>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html lang="en" style="cursor: grabbing;">
 <head>
@@ -27,14 +19,12 @@
     <img src="${pageContext.request.contextPath}/pictures/Afanas.jpg" class="right" alt="Дмитрий Борисович"/>
 </div>
 
-<div id = "description" title = "Задание" onload="draw();">
-<!-- <img src="plot1.png" alt="график функции" class ="image" align = "center" title="График"/> -->
+<div id = "description" title = "Задание">
 <canvas width="400" height="400" id="image"></canvas>
 </div>
 
 <div>
     <form name = "myform" method="POST" title = "Таблица ввода значений" action="${pageContext.request.contextPath}/control">
-<%--  action="results.html"  --%>
         <p>Выберите X</p>
         <select name = "X">
             <option value="-5"> -5 </option>
@@ -48,7 +38,7 @@
             <option value="3"> 3 </option>
         </select>
         <p>Введите Y</p>
-        <input type = "text" id = "inputY" name = "Y" maxlength="6"> <!-- Y можно было бы использовать type = "number" чтобы вводить только цифры -->
+        <input type = "text" id = "inputY" name = "Y" maxlength="6">
         <p>Выберите R</p>
         <input type = "text" id = "inputR" name = "R" maxlength="6" oninput="draw()">
         <br>

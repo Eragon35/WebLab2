@@ -17,7 +17,7 @@ header.addEventListener("mouseenter", e =>  {
 let flip = document.getElementById("return");
 flip.addEventListener("mouseenter", () => { flip.style.transform += 'rotateX(360deg)'; });
 
-function draw() { //drawind grid
+function draw() { // drawing grid
     let canvas = document.getElementById('image');
     if (canvas.getContext) {
         let ctx = canvas.getContext('2d');
@@ -45,12 +45,10 @@ function draw() { //drawind grid
         ctx.lineTo(200, 400);
         ctx.stroke();
 
-        //    TODO: draw dots form table
-        let table = document.getElementById('table');
+        let table = document.getElementById('table'); // drawing dots
         for (let r = 1, n = table.rows.length; r < n; r++) {
             let x = table.rows[r].cells[0].innerHTML
             let y = table.rows[r].cells[1].innerHTML
-        //    draw dot
             ctx.fillStyle = 'rgb(220, 20, 60)';
             ctx.beginPath();
             ctx.arc(200 + 40 * x, 200 - 40 * y, 6, 0, 2 * Math.PI);

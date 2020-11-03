@@ -124,13 +124,13 @@ form[name = "myform"]:hover {
     background-image: url("../pictures/pattern.jpg");
     opacity: 0.8;
 }
-
-table td{   /* использование селектора потомков */
+table td {   /* использование селектора потомков */
     border:2px solid #02f;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-}
-td:hover{
     filter:sepia(100%);
+}
+td:hover {
+    filter:sepia(0%);
 }

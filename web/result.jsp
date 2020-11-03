@@ -1,14 +1,6 @@
 <%@ page import="app.model.Row" %>
-<%@ page import="java.util.ArrayList" %><%--
-  Created by IntelliJ IDEA.
-  User: Triada
-  Date: 28.10.2020
-  Time: 14:07
-  To change this template use File | Settings | File Templates.
---%>
-<%
-    ArrayList<Row> rows = (ArrayList<Row>) session.getAttribute("table");
-%>
+<%@ page import="java.util.ArrayList" %>
+<% ArrayList<Row> rows = (ArrayList<Row>) session.getAttribute("table"); %>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html lang="en">
 <head>

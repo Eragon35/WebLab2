@@ -1,14 +1,6 @@
-<%@ page import="java.util.List" %>
-<%@ page import="app.model.Row" %><%--
-  Created by IntelliJ IDEA.
-  User: Triada
-  Date: 28.10.2020
-  Time: 14:07
-  To change this template use File | Settings | File Templates.
---%>
-<%
-    List<Row> rows = (List<Row>) session.getAttribute("table");
-%>
+<%@ page import="app.model.Row" %>
+<%@ page import="java.util.ArrayList" %>
+<% ArrayList<Row> rows = (ArrayList<Row>) session.getAttribute("table"); %>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html lang="en">
 <head>
@@ -44,7 +36,7 @@
             } %>
     </table>
 
-    <button id = "return" value="Back to form" onclick="location.replace('./');">Back to form</button>
+    <button id = "return" value="Back to form" onclick="location.replace('./');" align = "center">Back to form</button>
 
     <script src="${pageContext.request.contextPath}/scripts/script2.js"></script>
     <script> draw();</script>

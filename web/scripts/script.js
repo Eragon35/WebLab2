@@ -66,26 +66,19 @@ plot.addEventListener("click", () => {
     let x = (Math.round(event.clientX - elem.left - 6) - 200) / 40;
     let y = (Math.round(event.clientY - elem.top - 6) - 200) / -40;
     let r = document.getElementById("inputR").value.replace(',', '.');
-    if (r.length === 0){
-        alert("Заполним форму R");
-        btn.disabled = true;
+    if (r.length === 0) alert("Заполним форму R");
+    else if (!/^-?\d+[.,]?\d*$/i.test(r)) alert("В поле R допустим ввод цифр и точки или запятой");
+    else if ((r <= 1 || r >= 4)) alert("Значение R должно входить в (1;4)");
+    else {
+        confirm("Do you wanna check\n" + x + " " + y + " " + r); // send post request
+        let xhr = new XMLHttpRequest();
+        let body = 'X=' + encodeURIComponent(x) + "&Y=" + encodeURIComponent(y) + "&R=" + encodeURIComponent(r);
+        xhr.open("POST", '/control');
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send(body);
+        if (xhr.status !== 200 && xhr.readyState === XMLHttpRequest.DONE) alert("shit happened, you request is failed");
+        else window.location.replace("/result.jsp");
     }
-    else if (!/^-?\d+[.,]?\d*$/i.test(r)){
-        alert("В поле R допустим ввод цифр и точки или запятой");
-        btn.disabled = true;
-    }
-    else if ((r <= 1 || r >= 4)){
-        alert("Значение R должно входить в (1;4)");
-        btn.disabled = true;
-    }
-    else confirm("Do you wanna check\n" + x + " " + y + " " + r); // send post request
-    let xhr = new XMLHttpRequest();
-    let body = 'X=' + encodeURIComponent(x) + "&Y=" + encodeURIComponent(y) + "&R=" + encodeURIComponent(r);
-    xhr.open("POST", '/control');
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send(body);
-    if (xhr.status !== 200 && xhr.readyState === XMLHttpRequest.DONE) alert("shit happened, you request is failed");
-    else window.location.replace("/result.jsp");
 });
 /*
     Технические работы в ИСУ
@@ -112,9 +105,9 @@ function check(){
         notification.innerHTML = "В поле Y допустим ввод цифр и точки или запятой";
         btn.disabled = true;
     }
-    else if ((textY <= -3 || textY >= 5)){
+    else if ((textY <= -3 || textY >= 3)){
         flag = false;
-        notification.innerHTML = "Значение Y должно входить в (-3;5)";
+        notification.innerHTML = "Значение Y должно входить в (-3;3)";
         btn.disabled = true;
     }
     else if (textR.length === 0){

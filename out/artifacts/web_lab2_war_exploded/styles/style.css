@@ -3,7 +3,6 @@ body{
     background-image: url(../pictures/back.png);
     background-size: 20%; 
 }
-
 #labInfo > header{  /* использование селекторов дочерних элементов */
     font-family: "Montserrat","Open Sans", sans-serif;
     color:#fff;
@@ -30,6 +29,7 @@ body{
     border: 6px solid crimson;
     cursor: crosshair;
 }
+
 .left{
     width: 20%;
     float: left;
@@ -47,13 +47,6 @@ body{
 }
 .right:hover{
     opacity: 0.4;
-}
-#fear{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 0%;
-    transition: transform .35s; /* Animation */
 }
 
 form[name = "myform"]{   /* использование селекторов элементов */
@@ -131,13 +124,12 @@ form[name = "myform"]:hover {
     background-image: url("../pictures/pattern.jpg");
     opacity: 0.8;
 }
-
-table td{   /* использование селектора потомков */
+table td {   /* использование селектора потомков */
     border:2px solid #02f;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
-td:hover{
+td:hover {
     filter:sepia(100%);
 }
